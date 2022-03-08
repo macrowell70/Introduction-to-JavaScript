@@ -18,9 +18,14 @@ Do the following:
    2. Console log true if age is 18 or higher
 
    HINT: no function required
+
+   
+ 
 */
-
-
+const votingAge = 18
+if (votingAge >= 18) {
+  console.log(true)
+}
 
 /*
 Task 1b - Values (not auto tested)
@@ -34,7 +39,11 @@ Do the following:
    HINT: no function required
 */
 
-
+const firstThing = 5
+const secondThing = 10
+if (firstThing <= secondThing) {
+  console.log(firstThing)
+}
 
 
 
@@ -49,6 +58,8 @@ Do the following:
    HINT: look up the Number method
 */
 
+const num = '1999'
+console.log(parseInt(num))
 
 
 
@@ -61,8 +72,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+ return (a * b)
 }
 
 
@@ -77,8 +88,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return (age * 7)
 }
 
 
@@ -89,7 +100,7 @@ function dogYears(/*add your code here*/){
 /*
 Use the hungryDog function and feeding requirements below to do the following:
 1. Invoke the hungryDog function below and pass it a weight value in pounds, followed by an age value in years
-2. note: if the dog is a puppy, the age will be a decimal. For example: three months = 3/12 or .25
+2. note: if the dog is a puppy, the age will be a decimal. For example: three months = 3/12 or .25 (round to 2 decimals)
 3. Do the proper calculations and return the number of pounds of raw food to feed the dog/puppy in a day
 
 REMEMBER: This program should handle correctly adult AND puppy ages and weights
@@ -129,9 +140,31 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(age, weight) {
+  if (age >= .17 && age < .33) {
+    return weight * .1
+  } else if (age >= .33 && age < .58) {
+    return weight * .05
+  } else if (age >= .58 && age < 1) {
+    return weight * .04
+  } else if (age >= 1) {
+    if (weight <= 5) {
+      return weight * .05
+    } else if (weight > 5 && weight <= 10) {
+      return weight * .04
+    } else if (weight > 10 && weight <= 15) {
+      return weight * .03
+    } else if (weight > 15) {
+      return weight * .02
+    } else {
+      return 'error'
+    }
+  } else {
+    return 'error'
+  }
 }
+
+
 
 
 
