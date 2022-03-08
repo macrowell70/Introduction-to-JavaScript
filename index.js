@@ -188,9 +188,44 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let computer = 'computerChoice'
+let randomNum = Math.floor(Math.random() * 3)
+if (randomNum === 0) {
+  computer = 'rock'
+} else if (randomNum === 1) {
+  computer = 'paper'
+} else if (randomNum === 2) {
+  computer = 'scissors'
+} else {
+  console.log('error')
+}
 
 function game(user, computer){
-  /*add your code here*/
+  if (user === 'rock') {
+    if (computer === 'rock') {
+      return "it's a tie";
+    } else if (computer === 'paper') {
+      return "you lose!";
+    } else if (computer === 'scissors') {
+      return "you win!";
+    }
+  } else if (user === 'paper') {
+      if (computer === 'rock') {
+        return "you win!";
+      } else if (computer === 'paper') {
+        return "it's a tie";
+      } else if (computer === 'scissors') {
+        return "you lose!";
+    }
+  } else if (user === 'scissors') {
+        if (computer === 'rock') {
+          return "you lose!";
+        } else if (computer === 'paper') {
+          return "you win!";
+        } else if (computer === 'scissors') {
+          return "it's a tie";
+    }
+  }
 }
 
 
@@ -206,8 +241,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return km * .621371
 }
 
 
@@ -220,8 +255,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48
 }
 
 
